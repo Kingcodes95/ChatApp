@@ -14,40 +14,42 @@ datasource db {
 }
 
 model User {
-  id String @id @default(cuid())
-  username String @unique
-  fullName String
-  password String
-  gender Gender
-  profilePic String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id               String   @id @default(cuid())
+  username         String   @unique
+  fullName         String
+  password         String
+  gender           Gender
+  profilePic       String
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
   conversationsIds String[]
 
   conversations Conversation[]
-  messages Message[]
+  messages      Message[]
 }
+
 model Conversation {
-  id String @id @default(cuid())
+  id        String   @id @default(cuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   participantsIds String[]
-  participants User[]
+  participants    User[]
 
   messageIds String[]
-  messages Message[]
+  messages   Message[]
 }
+
 model Message {
   id String @id @default(cuid())
 
   conversationId String
-  conversation Conversation @relation(fields: [conversationId], references: [id])
-  
-  senderId String
-  sender User @relation(fields: [senderId], references: [id])
+  conversation   Conversation @relation(fields: [conversationId], references: [id])
 
-  body String
+  senderId String
+  sender   User   @relation(fields: [senderId], references: [id])
+
+  body      String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -56,3 +58,5 @@ enum Gender {
   male
   female
 }
+
+// if you make any changes use npx prisma db push to update the database
