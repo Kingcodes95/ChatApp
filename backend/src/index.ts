@@ -16,3 +16,7 @@ app.use("/api/messages", messageRoutes);
 app.listen(3000, () => {
 	console.log(`Server is running on http://localhost:3000`);
 });
+
+
+// Todo: Add Socket.io for real time messaging
+// Todo: configue this for deployment
