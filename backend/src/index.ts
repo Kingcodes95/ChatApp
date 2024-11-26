@@ -4,7 +4,8 @@ import messageRoutes from "./routes/message.route.js";
 import dotenv from "dotenv";
 
 const app = express();
-dotenv.config();
+dotenv.config({ path: "../.env" });
+//dotenv.config(); for my windows pc
 
 app.use(express.json());
 

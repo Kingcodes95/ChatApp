@@ -1,0 +1,5 @@
+DATABASE_URL=postgresql://ChatDB_owner:6MCNyD2PcgQn@ep-still-smoke-a5tks5za-pooler.us-east-2.aws.neon.tech/ChatDB?sslmode=require
+
+JWT_SECRET=mysecretkey
+
+NODE_ENV=development
