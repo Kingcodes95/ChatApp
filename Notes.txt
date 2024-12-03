@@ -1,0 +1,2 @@
+Anybody getting the the TypeError [ERR_UNKNOWN_FILE_EXTENSION]: Unknown file extension ".ts" can try adding this to their package.json script: 
+"dev": "nodemon --exec node --no-warnings=ExperimentalWarning --loader ts-node/esm backend/src/index.ts"
